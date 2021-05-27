@@ -17,7 +17,7 @@ def path2(x, y, n, D):
         D[x][y] = path2(x + 1, y, n, D) + path2(x, y + 1, n, D)
     return D[x][y]
 
-# returns binomial(2n, n)
+# returns binomial(2n, n): Draw the Pascal's triangle!
 def path3(n):
     return factorial(2 * n) // (factorial(n) ** 2)
 
