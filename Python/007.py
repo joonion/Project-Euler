@@ -12,7 +12,6 @@ def solve(nth):
         n += 2
     return primes[-1]
 
-# nth = 6
-nth = 10001
-answer = solve(nth)
-print(answer)
+# n = 6
+n = 10001
+print(solve(n))
