@@ -1,10 +1,10 @@
-def solve():
-    a, b, s = 1, 2, 2
-    while b <= 4000000:
+def solve(n):
+    a, b, s = 1, 2, 0
+    while b <= n:
         a, b = b, a + b 
-        if b % 2 == 0:
-            s += b
+        if a % 2 == 0:
+            s += a
     return s
 
-answer = solve()
-print(answer)
+n = 4000000
+print(solve(n))

@@ -7,5 +7,4 @@ def solve(n):
 
 # n = 10
 n = 1000
-answer = solve(n)
-print(answer)
+print(solve(n))
