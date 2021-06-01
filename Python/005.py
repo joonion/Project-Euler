@@ -1,12 +1,18 @@
-from math import gcd
+def gcd(n, m):
+    if m == 0:
+        return n
+    else:
+        return gcd(m, n % m)
+
+def lcm(n, m):
+    return n * m // gcd(n, m)
 
 def solve(n):
-    lcm = 1
+    m = 1
     for i in range(2, n + 1):
-        lcm = lcm * i // gcd(lcm, i)
-    return lcm
+        m = lcm(m, i)
+    return m
 
 # n = 10
 n = 20
-answer = solve(n)
-print(answer)
+print(solve(n))
