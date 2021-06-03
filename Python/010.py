@@ -1,17 +1,13 @@
-# returns all the primes below n 
 def solve(n):
-    sieve = [i for i in range(n)]
-    sieve[1] = 0 # 1 is not a prime
-    for i in range(2, n):
-        for j in range(i + i, n, i):
-            sieve[j] = 0
-    primes = []
-    for i in range(2, n):
-        if sieve[i] != 0:
-            primes.append(sieve[i])
-    return primes
+    sieve = [True] * (n + 1)
+    s = 0
+    for i in range(2, n + 1):
+        if sieve[i] == True:
+            s += i
+            for j in range(i + i, n + 1, i):
+                sieve[j] = False
+    return s
 
 # n = 10
 n = 2000000
-primes = solve(n)
-print(sum(primes), len(primes))
+print(solve(n))
