@@ -13,9 +13,12 @@ def solve(n, M):
     D = [[INF for _ in range(n)] for _ in range(n)]
     return shortest(n - 1, n - 1, M, D)
 
-INF = 0xFFFFFFFF
 n = int(input())
 matrix = []
 for _ in range(n):
     matrix.append(list(map(int, input().split(','))))
+INF = 0
+for i in range(n):
+    for j in range(n):
+        INF += matrix[i][j]
 print(solve(n, matrix))   
